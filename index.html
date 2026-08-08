@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web VM: CHIP-8</title>
+    <style>
+        body { background: #222; color: white; text-align: center; font-family: sans-serif; }
+        /* Scale the tiny 64x32 display up so we can see it */
+        canvas { background: black; width: 640px; height: 320px; image-rendering: pixelated; border: 2px solid #555;}
+    </style>
+</head>
+<body>
+    <h1>My Browser VM</h1>
+    
+    <!-- This is your VM's screen -->
+    <canvas id="screen" width="64" height="32"></canvas>
+    
+    <br>
+    <input type="file" id="romUpload" accept=".ch8">
+
+    <script src="chip8.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
