@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <title>Web VM: CHIP-8</title>
     <style>
-        body { background: #222; color: white; text-align: center; font-family: sans-serif; }
-        /* Scale the tiny 64x32 display up so we can see it */
-        canvas { background: black; width: 640px; height: 320px; image-rendering: pixelated; border: 2px solid #555;}
+        body { 
+            background: #222; 
+            color: white; 
+            text-align: center; 
+            font-family: sans-serif; 
+            margin-top: 50px;
+        }
+        canvas { 
+            background: black; 
+            width: 640px; 
+            height: 320px; 
+            /* This property ensures the scaled pixels stay sharp, not blurry */
+            image-rendering: pixelated; 
+            border: 2px solid #555;
+            margin-bottom: 20px;
+        }
+        .controls {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <h1>My Browser VM</h1>
+    <h1>CHIP-8 Web VM</h1>
     
-    <!-- This is your VM's screen -->
     <canvas id="screen" width="64" height="32"></canvas>
-    
     <br>
-    <input type="file" id="romUpload" accept=".ch8">
+    
+    <div class="controls">
+        <input type="file" id="romUpload" accept=".ch8">
+        <p style="font-size: 12px; color: #aaa;">
+            Controls (Keyboard mapped to CHIP-8 Hex pad):<br>
+            [1][2][3][4] -> 1 2 3 C<br>
+            [Q][W][E][R] -> 4 5 6 D<br>
+            [A][S][D][F] -> 7 8 9 E<br>
+            [Z][X][C][V] -> A 0 B F
+        </p>
+    </div>
 
     <script src="chip8.js"></script>
     <script src="main.js"></script>
